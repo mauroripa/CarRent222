@@ -1,0 +1,109 @@
+@charset "UTF-8";
+.card {
+    width: 190px;
+    height: 254px;
+    background: #222121;
+    position: relative;
+    display: flex;
+    place-content: center;
+    place-items: center;
+    overflow: hidden;
+    border-radius: 20px;
+    
+  }
+  img {
+    z-index: 4;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    position: absolute;
+
+  }
+  
+  .card h5 {
+    z-index: 5;
+    color: rgb(255, 255, 255);
+    font-size: 1em;
+    margin-top: 50%;
+  }
+  
+  .card::before {
+    content: '';
+    position: absolute;
+    width: 100px;
+    background-image: linear-gradient(180deg, #ca0202,#ca0202);
+    height: 130%;
+    animation: rotBGimg 3s linear infinite;
+    transition: all 0.2s linear;
+  }
+  
+  @keyframes rotBGimg {
+    from {
+      transform: rotate(0deg);
+    }
+  
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .card::after {
+    content: '';
+    position: absolute;
+    background: #222121;
+    ;
+    inset: 5px;
+    border-radius: 15px;
+  }  
+
+/* Il resto del CSS rimane invariato */
+
+.container a {
+    position: relative;
+    display: inline-block; /* Assicura che il link prenda il layout desiderato */
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+
+.container a:hover {
+    background: #ca0202;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #ca0202,
+                0 0 25px #ca0202,
+                0 0 50px #ca0202,
+                0 0 100px #ca0202;
+}
+
+.container a span {
+    position: absolute;
+    display: block;
+}
+
+@keyframes btn-anim1 {
+    0% {
+        left: -100%;
+    }
+    50%, 100% {
+        left: 100%;
+    }
+}
+
+.container a span:nth-child(1) {
+    bottom: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #ca0202);
+    animation: btn-anim1 2s linear infinite;
+}
+
+/* Aggiungi altre animazioni se ci sono più span */
+
+  /* .card:hover:before {
+    background-image: linear-gradient(180deg, rgb(81, 255, 0), purple);
+    animation: rotBGimg 3.5s linear infinite;
+  } */
