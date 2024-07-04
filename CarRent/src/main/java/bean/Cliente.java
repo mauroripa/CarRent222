@@ -1,7 +1,7 @@
 package bean;
 
 public class Cliente {
-private int id;
+private int id_cliente;
 private String nome;
 private String cognome;
 private String email;
